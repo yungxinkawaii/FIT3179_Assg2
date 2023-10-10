@@ -1,0 +1,64 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/yungxinkawaii/DV_Week10/main/data/US%20Police%20shootings%20in%20from%202015-22%20cleaned.csv"
+  },
+  "background":null,
+  "title": {
+    "text": "Cities of Occurance",
+    "fontSize": 20,
+    "font": "Century Gothic"
+  },
+  "width": 800,
+  "height":300,
+  "transform": [
+    {
+      "groupby": ["city"],
+      "aggregate": [{ "op": "count", "as": "count" }]
+    },
+    {
+      "window": [{ "op": "rank", "as": "rank" }],
+      "sort": [{ "field": "count", "order": "descending" }]
+    },
+    { "filter": "datum.rank <= 10" }
+  ],
+  "params": [
+    {
+      "name": "highlight",
+      "select": { "type": "point", "on": "mouseover" }
+    }
+  ],
+  "layer": [
+    {
+      "mark": { "type": "bar", "color": "saddlebrown"},
+      "encoding": {
+        "y": {
+          "field": "city",
+          "type": "nominal",
+          "sort": "-x",
+          "axis": { 
+            "title": "City",
+            "titleFont": "Century Gothic",
+            "labelFont": "Century Gothic" }
+        },
+        "x": {
+          "field": "count",
+          "type": "quantitative",
+          "axis": { 
+            "title": "Number of Cases",
+            "titleFont": "Century Gothic",
+            "labelFont": "Century Gothic" }
+        },
+        "tooltip": [
+          { "field": "rank", "type": "nominal", "title": "Rank (Top)" },
+          { "field": "city", "type": "nominal", "title": "City" },
+          { "field": "count", "type": "quantitative", "title": "Number of Cases" }
+        ],
+        "opacity": {
+          "condition": { "param": "highlight", "value": 1 },
+          "value": 0.5
+        }
+      }
+    }
+  ]
+}

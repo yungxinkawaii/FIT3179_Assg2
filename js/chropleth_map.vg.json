@@ -1,0 +1,75 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 800,
+  "height": 600,
+  "background": null,
+  "title": {
+    "text": "Occurence by State",
+    "fontSize": 20,
+    "font": "Century Gothic"
+  },
+  "projection": { "type": "albersUsa" },
+  "data": {
+    "url": "https://raw.githubusercontent.com/yungxinkawaii/DV_Week10/master/data/ne_110m_admin.topojson",
+    "format": {
+      "type": "topojson",
+      "feature": "ne_110m_admin_1_states_provinces"
+    }
+  },
+  "params": [
+    {
+      "name": "highlight",
+      "select": { "type": "point", "on": "mouseover" }
+    }
+  ],
+  "transform": [
+    {
+      "lookup": "properties.name",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/yungxinkawaii/DV_Week10/master/data/US%20Police%20shootings%20in%20from%202015-22%20cases.csv"
+        },
+        "key": "State",
+        "fields": ["Cases"]
+      }
+    }
+  ],
+  "layer": [
+    {
+      "mark": { "type": "geoshape", "stroke": "white" },
+      "encoding": {
+        "color": {
+          "field": "Cases",
+          "type": "quantitative",
+          "title": "Number of Cases",
+          "scale": { "scheme": "browns" },
+          "legend": {
+            "title": "Number of Cases",
+            "titleFont": "Century Gothic",
+            "labelFont": "Century Gothic",
+            "titleFontSize": 15,
+            "labelFontSize": 15
+          }
+        },
+        "tooltip": [
+          { "field": "properties.name", "type": "nominal", "title": "State" },
+          {
+            "field": "Cases",
+            "type": "quantitative",
+            "title": "Number of Cases"
+          }
+        ],
+        "strokeWidth": {
+          "condition": [
+            {
+              "param": "highlight",
+              "empty": false,
+              "value": 3
+            }
+          ],
+          "value": 0.3
+        }
+      }
+    }
+  ]
+}

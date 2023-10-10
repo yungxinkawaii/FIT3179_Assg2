@@ -1,0 +1,64 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/yungxinkawaii/DV_Week10/master/data/output_merged.csv"
+  },
+  "width": 800,
+  "background": null,
+  "title": {
+    "text": "Timeline of Occurances",
+    "fontSize": 20,
+    "font": "Century Gothic"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "line": true,
+        "point": {
+          "filled": false,
+          "fill": "white",
+          "size": 100,
+          "color": "saddlebrown"
+        },
+        "strokeWidth": 7,
+        "color": "saddlebrown"
+      },
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal",
+          "timeUnit": "year",
+          "axis": {
+            "title": "Year",
+            "titleFont": "Century Gothic",
+            "labelFont": "Century Gothic"
+          }
+        },
+        "y": {
+          "aggregate": "count",
+          "title": "Number of Cases",
+          "type": "quantitative",
+          "axis": {
+            "titleFont": "Century Gothic",
+            "labelFont": "Century Gothic"
+          }
+        }
+      }
+    },
+    {
+      "mark": { "type": "text", "dx": 12, "dy": -10, "font": "Century Gothic"},
+      "encoding": {
+        "x": {
+          "field": "date",
+          "type": "temporal",
+          "timeUnit": "year",
+          "axis": { "title": "Year", "tickCount": 10 }
+        },
+        "y": { "aggregate": "count", "title": "Count", "type": "quantitative" },
+        "text": { "aggregate": "count", "type": "quantitative" },
+        "color": { "value": "black" }
+      }
+    }
+  ]
+}

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The US Police Shooting Story</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="middle-section">
+      <div class="content">
+        <!-- Your content goes here -->
+        <h1 style="text-align: center">When Law Meets Lethal Force:</h1>
+        <h1 class="title">The US Police Shooting Story</h1>
+
+        <img style="height: 300px" src="assets/gun.jpg" alt="title image" />
+
+        <p>
+          Fatal incidents involving law enforcement officers in the United
+          States are a significant concern. Congress requested data on police
+          use of force in 1994, but it was never compiled, and the FBI doesn't
+          collect this information. Recent estimates indicate an annual range of
+          930 to 1,240 justifiable homicides, with police shootings being a
+          leading cause of death for men aged 25–29. Two databases,
+          <span class="custom-highlight">'The Counted'</span> by The Guardian
+          and <span class="custom-highlight">The Washington Post</span>,
+          recorded these incidents from 2015 to 2019. In 2019, The Washington
+          Post reported 1,004 police shooting fatalities, totaling 6,600 since
+          2015, primarily affecting men.
+        </p>
+        <p>
+          Our website will visualize data from the
+          <span class="custom-highlight"
+            >👮‍♂️🔫US Police Shootings from 2015- Sep 2022</span
+          >
+          database. We'll explore case distribution by state, identify cities
+          with the highest incidence, analyze age and race demographics, assess
+          weapons used, and present an annual case trend.
+        </p>
+
+        <!-- Add your content elements here -->
+      </div>
+    </div>
+
+    <div class="middle-section">
+      <div class="content">
+        <!-- Your content goes here -->
+        <h1>Occurances by State</h1>
+        <p>
+          The analysis reveals a stark disparity in the frequency of these
+          incidents, with
+          <span class="custom-highlight">California</span> bearing the brunt at
+          a staggering <span class="custom-highlight">739</span> occurrences,
+          followed by Texas at 439. Meanwhile,
+          <span class="custom-highlight">Rhode Island</span> stands in stark
+          contrast, experiencing a mere
+          <span class="custom-highlight">2</span> such incidents – a stark
+          reminder of the dramatic differences across states.
+        </p>
+        <div class="visualization-container">
+          <div id="chropleth_map"></div>
+        </div>
+
+        <br />
+        <br />
+        <br />
+
+        <h1>Occurances by City</h1>
+        <p>
+          The data reveals the most prominent cities in terms of incidents, with
+          <span class="custom-highlight">Los Angeles</span> leading the list,
+          experiencing a staggering <span class="custom-highlight">78</span>
+          occurrences. Phoenix follows closely behind with 67 incidents.
+          Additionally, Houston, Las Vegas, San Antonio, and Jacksonville have
+          encountered 50, 46, 42, and 37 incidents, respectively. Interestingly,
+          both Chicago and Columbus share the same count of 36 occurrences.
+        </p>
+
+        <div class="visualization-container">
+          <div id="city"></div>
+        </div>
+
+        <!-- Add your content elements here -->
+      </div>
+    </div>
+
+    <div class="middle-section">
+      <div class="content">
+        <h1>Victim Analysis</h1>
+        <p>
+          The distribution of victims' ages exhibits a pronounced
+          <strong>right-skew</strong>, with a predominant age range spanning
+          from <span class="custom-highlight">20 to 40 years</span>.
+          Additionally, there is a notable presence of older victims, reflecting
+          a diverse age range.
+        </p>
+        <p>
+          <span class="custom-highlight">Male victims</span> significantly
+          outnumber their female counterparts, constituting a staggering
+          <span class="custom-highlight">94.97%</span> of the total victims,
+          totaling <span class="custom-highlight">4,815</span>
+          cases. Conversely, female victims account for a smaller proportion,
+          with a representation of 5.03%, encompassing 255 cases.
+        </p>
+        <div class="container">
+          <div class="left">
+            <div class="visualization-container">
+              <div id="age"></div>
+            </div>
+          </div>
+          <div class="right">
+            <div class="visualization-container">
+              <div id="race"></div>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Among the victims, the majority are of
+          <span class="custom-highlight">White</span> ethnicity, comprising
+          <span class="custom-highlight">50.95%</span> of the total victims,
+          amounting to <span class="custom-highlight">2,583</span> individuals.
+          In contrast, <span class="custom-highlight">Black</span> victims make
+          up a substantial portion as well, representing
+          <span class="custom-highlight">26.73%</span> of the total victims,
+          with 1,355 recorded cases.
+        </p>
+      </div>
+    </div>
+
+    <div class="middle-section">
+      <div class="content">
+        <h1>Weapons Used</h1>
+        <p>
+          The weapon of choice for the majority of victims in these incidents
+          was a <span class="custom-highlight">gun</span>, accounting for a
+          substantial <span class="custom-highlight">2,987</span> cases.
+          Additionally, a significant number of victims resorted to using a
+          <span class="custom-highlight">knife</span> as their weapon, tallying
+          <span class="custom-highlight">767</span> instances.
+        </p>
+        <p>
+          In 378 recorded instances, victims were found to be unarmed during
+          these incidents. Furthermore, other weapons such as toy weapons,
+          vehicles, and machetes were also employed, with frequencies of 196,
+          173, and 42 occurrences, respectively. Notably, there were 52 cases
+          where the weapon used remained unidentified.
+        </p>
+
+        <div class="visualization-container">
+          <div id="weapon"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="middle-section">
+      <div class="content">
+        <h1>Occurances Timeline</h1>
+        <p>
+          Over time, there has been a significant decline in these occurrences,
+          with the highest number of cases documented in 2015 at a staggering
+          <span class="custom-highlight">913</span>, while in 2022, the count
+          has plummeted to a mere
+          <span class="custom-highlight">84</span> cases. This substantial
+          reduction could be attributed to various factors such as improved law
+          enforcement training, increased public awareness, or changes in
+          policing policies.
+        </p>
+
+        <div class="visualization-container">
+          <div id="simple_year"></div>
+        </div>
+
+        <p>
+          The interactive area chart below allow you to delve into the unique
+          trends of individual states, offering insights into the trajectory of
+          cases over the years. Simply click the dropdown menu to select your
+          desired state and explore the data.
+        </p>
+
+        <div class="visualization-container">
+          <div id="state_year"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="middle-section">
+      <div class="content">
+        <p class="subtitle">
+          This visualisation is created by Shin Yung Xin (31988814). The
+          datasource are from
+          <a
+            href="https://www.kaggle.com/datasets/ramjasmaurya/us-police-shootings-from-20152022/data"
+            target="_blank"
+            >👮‍♂️🔫US Police Shootings from 2015- Sep 2022</a
+          >
+          . Images used from
+          <a href="https://www.wallpaperflare.com/" target="_blank"
+            >Wallpaper Flare</a
+          >.
+        </p>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      var spec1 = "js/chropleth_map.vg.json";
+
+      vegaEmbed("#chropleth_map", spec1)
+        .then(function (result) {})
+        .catch(console.error);
+
+      var spec2 = "js/city.vg.json";
+
+      vegaEmbed("#city", spec2)
+        .then(function (result) {})
+        .catch(console.error);
+
+      var spec3 = "js/age.vg.json";
+
+      vegaEmbed("#age", spec3)
+        .then(function (result) {})
+        .catch(console.error);
+
+      var spec4 = "js/race.vg.json";
+
+      vegaEmbed("#race", spec4)
+        .then(function (result) {})
+        .catch(console.error);
+
+      var spec5 = "js/weapon.vg.json";
+
+      vegaEmbed("#weapon", spec5)
+        .then(function (result) {})
+        .catch(console.error);
+
+      var spec6 = "js/simple_year.vg.json";
+
+      vegaEmbed("#simple_year", spec6)
+        .then(function (result) {})
+        .catch(console.error);
+
+      var spec7 = "js/state_year.vg.json";
+
+      vegaEmbed("#state_year", spec7)
+        .then(function (result) {})
+        .catch(console.error);
+    </script>
+  </body>
+</html>

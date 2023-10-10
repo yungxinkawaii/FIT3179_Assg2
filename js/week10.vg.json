@@ -1,0 +1,105 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/yungxinkawaii/DV_Week9/master/data/US%20Police%20shootings%20in%20from%202015-22.csv"
+  },
+  "title": {
+    "text": "Used Weapons of Victims by States",
+    "fontSize": 20,
+    "font": "Helvetica"
+  },
+  "width": 800,
+  "transform": [
+    {
+      "lookup": "state",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/yungxinkawaii/DV_Week9/master/data/states.csv"
+        },
+        "key": "abbreviation",
+        "fields": ["fullname"]
+      },
+      "as": "state_fullname"
+    },
+    {
+      "filter": "datum.armed != null && datum.armed !== 'unarmed' && datum.armed !== 'undetermined'"
+    },
+    {
+      "groupby": ["state_fullname", "armed"],
+      "aggregate": [{ "op": "count", "as": "count" }]
+    },
+    { "filter": "datum.count > 27" }
+  ],
+  "layer": [
+    {
+      "params": [
+        {
+          "name": "armed_highlight",
+          "select": { "type": "point", "fields": ["armed"] },
+          "bind": "legend"
+        }
+      ],
+      "mark": "bar",
+      "encoding": {
+        "x": {
+          "aggregate": "sum",
+          "field": "count",
+          "type": "quantitative",
+          "stack": "zero",
+          "axis": { "title": "Number of Cases" }
+        },
+        "y": {
+          "field": "state_fullname",
+          "axis": { "title": "States" },
+          "sort": "-x"
+        },
+        "color": {
+          "field": "armed",
+          "type": "nominal",
+          "title": "Armed Type",
+          "legend": {
+            "title": "Armed Type",
+            "titleFontSize": 15,
+            "titleFont": "Helvetica",
+            "direction": "vertical",
+            "orient": "right",
+            "labelFontSize": 15,
+            "labelFont": "Helvetica",
+            "titleLimit": 1000
+          }
+        },
+        "opacity": {
+          "condition": { "param": "armed_highlight", "value": 1 },
+          "value": 0.2
+        },
+        "tooltip": [
+          { "field": "state_fullname", "title": "State" },
+          { "field": "armed", "title": "Armed Type" },
+          { "field": "count", "title": "Number of Cases" }
+        ]
+      }
+    },
+    {
+      "mark": { "type": "text", "color": "darkgrey", "dx": 15, "dy": 3 },
+      "encoding": {
+        "x": {
+          "aggregate": "sum",
+          "field": "count",
+          "type": "quantitative",
+          "stack": "zero",
+          "bandPosition": 0.5
+        },
+        "y": { "field": "state_fullname", "type": "nominal", "sort": "-x" },
+        "text": {
+          "aggregate": "sum",
+          "field": "count",
+          "type": "quantitative"
+        },
+        "fillOpacity": {
+          "condition": { "param": "armed_highlight", "value": 1 },
+          "value": 0
+        }
+      }
+    }
+  ]
+}

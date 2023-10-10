@@ -1,0 +1,124 @@
+/* Reset default margin and padding */
+body,
+h1,
+h2,
+h3 p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set the primary font to Century Gothic */
+body {
+  font-family: "Century Gothic", sans-serif;
+}
+
+/* Define the color theme */
+body {
+  background-image: url("../assets/wallpaperflare.com_wallpaper.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: brown; /* Text color */
+}
+
+/* Create a semi-transparent middle section */
+.middle-section {
+  background-color: rgba(255, 255, 255, 0.9); /* Brown with transparency */
+  padding: 20px;
+  border-radius: 10px;
+  margin: 50px auto;
+  max-width: 75%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Optional: Add a shadow */
+}
+
+/* Heading styles */
+h1 {
+  color: #8b4513; /* Brown heading color */
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+h1.title {
+  text-align: center;
+  font-size: 64px; /* Adjust the font size as needed */
+  color: brown; /* Title color */
+  /* Add any other title-specific styles here */
+}
+
+h2 {
+  color: #8b4513; /* Brown heading color */
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+h3 {
+  color: #8b4513; /* Brown heading color */
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* Paragraph styles */
+p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.custom-highlight {
+  color: maroon;
+  font-weight: bold;
+  font-size: 21px;
+}
+
+/* Link styles */
+a {
+  color: #8b4513; /* Brown link color */
+  text-decoration: underline;
+  transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+a:hover {
+  color: #a0522d; /* Darker brown on hover */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+.visualization-container {
+  display: flex;
+  justify-content: center; /* horizontally center */
+  align-items: center; /* vertically center */
+  width: 100%;
+  height: max-content;
+}
+
+.container {
+  display: flex;
+}
+
+.left {
+  flex: 1; /* Take up 50% of the container */
+  /* Additional styling for the left section */
+}
+
+.right {
+  flex: 1; /* Take up 50% of the container */
+  /* Additional styling for the right section */
+}
+
+.subtitle {
+  font-size: 16px; /* Adjust the font size as needed */
+  color: #888; /* Subtitle color (a shade of gray) */
+  margin-bottom: 10px; /* Add spacing below the subtitle */
+  font-family: "Century Gothic", sans-serif; /* Use the specified font-family */
+}

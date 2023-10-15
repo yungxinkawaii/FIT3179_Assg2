@@ -132,7 +132,11 @@
   ],
   "layer": [
     {
-      "mark": { "type": "area", "line": true, "point": true },
+      "mark": {
+        "type": "area",
+        "line": true,
+        "point": true
+      },
       "encoding": {
         "x": {
           "field": "date",
@@ -151,7 +155,8 @@
           "type": "quantitative",
           "axis": {
             "titleFont": "Century Gothic",
-            "labelFont": "Century Gothic"
+            "labelFont": "Century Gothic",
+            "grid": false
           }
         },
         "color": {
@@ -215,7 +220,11 @@
           "legend": null
         },
         "tooltip": [
-          { "field": "state_fullname", "type": "nominal", "title": "State" },
+          {
+            "field": "state_fullname",
+            "type": "nominal",
+            "title": "State"
+          },
           {
             "field": "date",
             "type": "temporal",

@@ -3,46 +3,68 @@
   "data": {
     "url": "https://raw.githubusercontent.com/yungxinkawaii/DV_Week10/main/data/US%20Police%20shootings%20in%20from%202015-22%20cleaned.csv"
   },
-  "background":null,
+  "background": null,
   "title": {
     "text": "Victims' Age Distribution",
     "fontSize": 20,
     "font": "Century Gothic"
   },
-  "width": 800,
+  "width": 500,
   "height": 300,
   "transform": [
-    { "calculate": "datum.gender == 'F' ? 'Female' : 'Male'", "as": "Gender" }
+    {
+      "calculate": "datum.gender == 'F' ? 'Female' : 'Male'",
+      "as": "Gender"
+    }
   ],
   "layer": [
     {
       "params": [
         {
           "name": "legend_highlight",
-          "select": { "type": "point", "fields": ["Gender"] },
+          "select": {
+            "type": "point",
+            "fields": [
+              "Gender"
+            ]
+          },
           "bind": "legend"
         }
       ],
-      "mark": { "type": "bar" },
+      "mark": {
+        "type": "bar"
+      },
       "encoding": {
         "x": {
           "field": "age",
           "title": "Age",
-          "bin": { "step": 5 },
-          "axis": { 
+          "bin": {
+            "step": 5
+          },
+          "axis": {
             "titleFont": "Century Gothic",
-            "labelFont": "Century Gothic" }
+            "labelFont": "Century Gothic",
+            "grid": false,
+            "domain": false
+          }
         },
         "y": {
           "aggregate": "count",
           "title": "Number",
-          "axis": { 
+          "axis": {
             "titleFont": "Century Gothic",
-            "labelFont": "Century Gothic" }
+            "labelFont": "Century Gothic",
+            "grid": false 
+          }
         },
         "color": {
           "field": "Gender",
-          "scale": { "range": ["#b57edc", "#ca8861"] },
+          "scale": {
+            "range": [
+              "#b57edc",
+              "#ca8861"
+            ]
+          },
           "legend": {
             "orient": "top-right",
             "title": "Gender",
@@ -54,7 +76,10 @@
           }
         },
         "opacity": {
-          "condition": { "param": "legend_highlight", "value": 1 },
+          "condition": {
+            "param": "legend_highlight",
+            "value": 1
+          },
           "value": 0.2
         },
         "tooltip": [
@@ -62,24 +87,40 @@
             "field": "age",
             "type": "quantitative",
             "title": "Age",
-            "bin": { "step": 5 }
+            "bin": {
+              "step": 5
+            }
           },
-          { "field": "Gender", "type": "nominal", "title": "Gender" },
-          { "aggregate": "count", "type": "quantitative", "title": "Victims" }
+          {
+            "field": "Gender",
+            "type": "nominal",
+            "title": "Gender"
+          },
+          {
+            "aggregate": "count",
+            "type": "quantitative",
+            "title": "Victims"
+          }
         ]
       }
     },
     {
       "mark": {
         "type": "line",
-        "point": { "filled": false, "fill": "white", "color": "brown" },
+        "point": {
+          "filled": false,
+          "fill": "white",
+          "color": "brown"
+        },
         "color": "brown"
       },
       "encoding": {
         "x": {
           "field": "age",
           "title": "Age",
-          "bin": { "step": 5 }
+          "bin": {
+            "step": 5
+          }
         },
         "y": {
           "aggregate": "count",
@@ -90,7 +131,9 @@
             "field": "age",
             "type": "quantitative",
             "title": "Age",
-            "bin": { "step": 5 }
+            "bin": {
+              "step": 5
+            }
           },
           {
             "aggregate": "count",

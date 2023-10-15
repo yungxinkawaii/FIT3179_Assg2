@@ -13,28 +13,52 @@
   },
   "transform": [
     {
-      "groupby": ["armed"],
-      "aggregate": [{ "op": "count", "as": "Count" }]
+      "groupby": [
+        "armed"
+      ],
+      "aggregate": [
+        {
+          "op": "count",
+          "as": "Count"
+        }
+      ]
     },
     {
       "filter": "datum.armed !== 'undetermined'"
     },
     {
-      "window": [{ "op": "rank", "as": "rank" }],
-      "sort": [{ "field": "Count", "order": "descending" }]
+      "window": [
+        {
+          "op": "rank",
+          "as": "rank"
+        }
+      ],
+      "sort": [
+        {
+          "field": "Count",
+          "order": "descending"
+        }
+      ]
     },
-
-    { "filter": "datum.rank <= 10" }
+    {
+      "filter": "datum.rank <= 10"
+    }
   ],
   "params": [
     {
       "name": "highlight",
-      "select": { "type": "point", "on": "mouseover" }
+      "select": {
+        "type": "point",
+        "on": "mouseover"
+      }
     }
   ],
   "layer": [
     {
-      "mark": { "type": "bar", "color": "saddlebrown" },
+      "mark": {
+        "type": "bar",
+        "color": "saddlebrown"
+      },
       "encoding": {
         "x": {
           "field": "Count",
@@ -51,16 +75,26 @@
           "axis": {
             "title": "Weapon",
             "titleFont": "Century Gothic",
-            "labelFont": "Century Gothic"
+            "labelFont": "Century Gothic",
+            "grid": false
           },
           "sort": "-x"
         },
         "tooltip": [
-          { "field": "armed", "title": "Armed Type" },
-          { "field": "Count", "title": "Number of Cases" }
+          {
+            "field": "armed",
+            "title": "Armed Type"
+          },
+          {
+            "field": "Count",
+            "title": "Number of Cases"
+          }
         ],
         "opacity": {
-          "condition": { "param": "highlight", "value": 1 },
+          "condition": {
+            "param": "highlight",
+            "value": 1
+          },
           "value": 0.2
         }
       }

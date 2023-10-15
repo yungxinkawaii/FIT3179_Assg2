@@ -1,5 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 400,
   "height": 300,
   "background": null,
   "data": {
@@ -21,7 +22,6 @@
     "fontSize": 20,
     "font": "Century Gothic"
   },
-  "width": 500,
   "encoding": {
     "theta": {
       "field": "value",
@@ -44,7 +44,7 @@
       },
       "legend": {
         "title": "Race",
-        "orient": "top-right",
+        "orient": "top-left",
         "titleFont": "Century Gothic",
         "labelFont": "Century Gothic",
         "titleFontSize": 15,
@@ -65,7 +65,7 @@
   },
   "layer": [
     {
-      "mark": { "type": "arc", "innerRadius": 50, "outerRadius": 140 }
+      "mark": { "type": "arc", "innerRadius": 30, "outerRadius": 120, "stroke": "white" }
     }
   ]
 }

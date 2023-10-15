@@ -41,7 +41,8 @@
           "type": "quantitative",
           "axis": {
             "titleFont": "Century Gothic",
-            "labelFont": "Century Gothic"
+            "labelFont": "Century Gothic",
+            "grid": false
           }
         }
       }

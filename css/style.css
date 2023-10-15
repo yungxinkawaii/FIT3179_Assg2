@@ -14,7 +14,6 @@ body {
 
 /* Define the color theme */
 body {
-  background-image: url("../assets/wallpaperflare.com_wallpaper.jpg");
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
@@ -27,7 +26,7 @@ body {
 
 /* Create a semi-transparent middle section */
 .middle-section {
-  background-color: rgba(255, 255, 255, 0.9); /* Brown with transparency */
+  background-color: #e7e1d4; /* Brown with transparency */
   padding: 20px;
   border-radius: 10px;
   margin: 50px auto;
@@ -102,17 +101,22 @@ img {
   height: max-content;
 }
 
+.vis-container {
+	width: fit-content;
+	border-radius: 10px;
+}
+
 .container {
   display: flex;
 }
 
 .left {
-  flex: 1; /* Take up 50% of the container */
+  flex: 7; /* Take up 50% of the container */
   /* Additional styling for the left section */
 }
 
 .right {
-  flex: 1; /* Take up 50% of the container */
+  flex: 3; /* Take up 50% of the container */
   /* Additional styling for the right section */
 }
 

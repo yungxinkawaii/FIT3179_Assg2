@@ -61,7 +61,7 @@
           "field": "Gender",
           "scale": {
             "range": [
-              "#b57edc",
+              "#e8a09a",
               "#ca8861"
             ]
           },

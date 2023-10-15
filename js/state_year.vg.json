@@ -4,6 +4,7 @@
     "url": "https://raw.githubusercontent.com/yungxinkawaii/DV_Week10/master/data/output_merged.csv"
   },
   "width": 800,
+  "height": 400,
   "background": null,
   "title": {
     "text": "Timeline of Occurence by State",
@@ -215,7 +216,7 @@
               "Wisconsin",
               "Wyoming"
             ],
-            "scheme": "browns"
+            "scheme": "category20b"
           },
           "legend": null
         },

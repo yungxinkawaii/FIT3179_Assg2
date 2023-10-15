@@ -36,15 +36,17 @@ body {
 
 /* Heading styles */
 h1 {
-  color: #8b4513; /* Brown heading color */
+  color: #333333; /* Brown heading color */
   font-size: 36px;
+  font-family: serif;
   margin-bottom: 20px;
 }
 
 h1.title {
   text-align: center;
-  font-size: 64px; /* Adjust the font size as needed */
-  color: brown; /* Title color */
+  font-family: serif;
+  font-size: 70px; /* Adjust the font size as needed */
+  color: #333333; /* Title color */
   /* Add any other title-specific styles here */
 }
 
@@ -70,9 +72,9 @@ p {
 }
 
 .custom-highlight {
-  color: maroon;
+  color: #800020;
   font-weight: bold;
-  font-size: 21px;
+  font-size: 22px;
 }
 
 /* Link styles */

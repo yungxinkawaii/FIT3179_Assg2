@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {
-    "url": "https://raw.githubusercontent.com/yungxinkawaii/DV_Week10/master/data/US%20Police%20shootings%20in%20from%202015-22%20cleaned.csv"
+    "url": "https://raw.githubusercontent.com/yungxinkawaii/FIT3179_Assg2/main/data/US%20Police%20shootings%20in%20from%202015-22%20cleaned.csv"
   },
   "background": null,
   "width": 800,

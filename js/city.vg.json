@@ -3,62 +3,139 @@
   "data": {
     "url": "https://raw.githubusercontent.com/yungxinkawaii/DV_Week10/main/data/US%20Police%20shootings%20in%20from%202015-22%20cleaned.csv"
   },
-  "background":null,
+  "background": null,
   "title": {
     "text": "Cities of Occurance",
     "fontSize": 20,
     "font": "Century Gothic"
   },
   "width": 800,
-  "height":300,
+  "height": 300,
   "transform": [
     {
-      "groupby": ["city"],
-      "aggregate": [{ "op": "count", "as": "count" }]
+      "groupby": [
+        "city"
+      ],
+      "aggregate": [
+        {
+          "op": "count",
+          "as": "count"
+        }
+      ]
     },
     {
-      "window": [{ "op": "rank", "as": "rank" }],
-      "sort": [{ "field": "count", "order": "descending" }]
+      "window": [
+        {
+          "op": "rank",
+          "as": "rank"
+        }
+      ],
+      "sort": [
+        {
+          "field": "count",
+          "order": "descending"
+        }
+      ]
     },
-    { "filter": "datum.rank <= 10" }
-  ],
-  "params": [
     {
-      "name": "highlight",
-      "select": { "type": "point", "on": "mouseover" }
+      "filter": "datum.rank <= 10"
     }
   ],
   "layer": [
     {
-      "mark": { "type": "bar", "color": "saddlebrown"},
+      "params": [
+        {
+          "name": "highlight",
+          "select": {
+            "type": "point",
+            "on": "mouseover"
+          }
+        }
+      ],
+      "mark": {
+        "type": "bar",
+        "color": "saddlebrown"
+      },
       "encoding": {
         "y": {
           "field": "city",
           "type": "nominal",
           "sort": "-x",
-          "axis": { 
+          "axis": {
             "title": "City",
             "titleFont": "Century Gothic",
-            "labelFont": "Century Gothic" }
+            "labelFont": "Century Gothic"
+          }
         },
         "x": {
           "field": "count",
           "type": "quantitative",
-          "axis": { 
+          "axis": {
             "title": "Number of Cases",
             "titleFont": "Century Gothic",
-            "labelFont": "Century Gothic" }
+            "labelFont": "Century Gothic"
+          }
         },
         "tooltip": [
-          { "field": "rank", "type": "nominal", "title": "Rank (Top)" },
-          { "field": "city", "type": "nominal", "title": "City" },
-          { "field": "count", "type": "quantitative", "title": "Number of Cases" }
+          {
+            "field": "rank",
+            "type": "nominal",
+            "title": "Rank (Top)"
+          },
+          {
+            "field": "city",
+            "type": "nominal",
+            "title": "City"
+          },
+          {
+            "field": "count",
+            "type": "quantitative",
+            "title": "Number of Cases"
+          }
         ],
         "opacity": {
-          "condition": { "param": "highlight", "value": 1 },
+          "condition": {
+            "param": "highlight",
+            "value": 1
+          },
           "value": 0.5
         }
       }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dy": 20,
+        "dx": 10,
+        "fontSize": 13.5,
+        "fontStyle": "bold",
+        "font": "Century Gothic"
+      },
+      "encoding": {
+        "text": {
+          "condition": {
+            "test": "datum['city'] == 'Jacksonville'",
+            "value": ["Jacksonville, despite being the largest city among all,", "only has 37 incidents."]
+          },
+          "value": ""
+        },
+        "color": { "value": "black" },
+        "opacity": {
+          "condition": {
+            "test": "datum['city'] == 'Jacksonville'",
+            "value": 1
+          },
+          "value": 0
+        }
+      }
     }
-  ]
+  ],
+  "config": {
+    "axis": {
+      "labelFont": "Century Gothic",
+      "titleFont": "Century Gothic"
+    }
+  }
 }

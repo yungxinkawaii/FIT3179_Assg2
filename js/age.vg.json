@@ -7,7 +7,7 @@
   "title": {
     "text": "Victims' Age Distribution",
     "fontSize": 20,
-    "font": "Century Gothic"
+    "font": "Century"
   },
   "width": 500,
   "height": 300,
@@ -42,8 +42,8 @@
             "step": 5
           },
           "axis": {
-            "titleFont": "Century Gothic",
-            "labelFont": "Century Gothic",
+            "titleFont": "Century",
+            "labelFont": "Century",
             "grid": false,
             "domain": false
           }
@@ -52,8 +52,8 @@
           "aggregate": "count",
           "title": "Number",
           "axis": {
-            "titleFont": "Century Gothic",
-            "labelFont": "Century Gothic",
+            "titleFont": "Century",
+            "labelFont": "Century",
             "grid": false 
           }
         },
@@ -68,8 +68,8 @@
           "legend": {
             "orient": "top-right",
             "title": "Gender",
-            "titleFont": "Century Gothic",
-            "labelFont": "Century Gothic",
+            "titleFont": "Century",
+            "labelFont": "Century",
             "titleFontSize": 15,
             "labelFontSize": 12,
             "symbolSize": 300
@@ -141,6 +141,35 @@
             "title": "Total Victims"
           }
         ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dy": 40,
+        "dx": 60,
+        "fontSize": 13.5,
+        "fontStyle": "bold",
+        "font": "Century"
+      },
+      "encoding": {
+        "text": {
+          "condition": {
+            "test": "datum['age'] == '70'",
+            "value": ["Among those aged over 70,", "there is nearly 0 female victim."]
+          },
+          "value": ""
+        },
+        "color": { "value": "black" },
+        "opacity": {
+          "condition": {
+            "test": "datum['age'] == '70'",
+            "value": 1
+          },
+          "value": 0
+        }
       }
     }
   ]

@@ -7,9 +7,8 @@ h3 p {
   padding: 0;
 }
 
-/* Set the primary font to Century Gothic */
 body {
-  font-family: "Century Gothic", sans-serif;
+  font-family: "Century", serif;
 }
 
 /* Define the color theme */
@@ -19,8 +18,7 @@ body {
   background-attachment: fixed;
   margin: 0;
   padding: 0;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: "Century", serif;
   color: brown; /* Text color */
 }
 
@@ -34,12 +32,19 @@ body {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Optional: Add a shadow */
 }
 
+.middle-section > * {
+  max-width: 100%; /* Adjust this value as needed */
+  box-sizing: border-box;
+}
+
 /* Heading styles */
 h1 {
   color: #333333; /* Brown heading color */
-  font-size: 36px;
+  font-size: 42px;
   font-family: serif;
   margin-bottom: 20px;
+  text-align: center;
+  font-style: bold;
 }
 
 h1.title {
@@ -67,8 +72,7 @@ p {
   font-size: 18px;
   line-height: 1.5;
   margin-bottom: 20px;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  font-family: "Century", serif;
 }
 
 .custom-highlight {
@@ -97,10 +101,15 @@ img {
 
 .visualization-container {
   display: flex;
-  justify-content: center; /* horizontally center */
-  align-items: center; /* vertically center */
+  justify-content: center; 
+  align-items: center; 
   width: 100%;
   height: max-content;
+}
+
+.visualization-container > * {
+  max-width: 100%; /* Adjust this value as needed */
+  box-sizing: border-box;
 }
 
 .vis-container {
@@ -126,5 +135,5 @@ img {
   font-size: 16px; /* Adjust the font size as needed */
   color: #888; /* Subtitle color (a shade of gray) */
   margin-bottom: 10px; /* Add spacing below the subtitle */
-  font-family: "Century Gothic", sans-serif; /* Use the specified font-family */
+  font-family: "Century", serif;
 }

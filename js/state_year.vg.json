@@ -7,9 +7,9 @@
   "height": 400,
   "background": null,
   "title": {
-    "text": "Timeline of Occurence by State",
+    "text": "Timeline of Occurrence by State",
     "fontSize": 20,
-    "font": "Century Gothic"
+    "font": "Century"
   },
   "params": [
     {
@@ -146,8 +146,8 @@
           "axis": {
             "title": "Year",
             "tickCount": 10,
-            "titleFont": "Century Gothic",
-            "labelFont": "Century Gothic"
+            "titleFont": "Century",
+            "labelFont": "Century"
           }
         },
         "y": {
@@ -155,8 +155,8 @@
           "title": "Number of Cases",
           "type": "quantitative",
           "axis": {
-            "titleFont": "Century Gothic",
-            "labelFont": "Century Gothic",
+            "titleFont": "Century",
+            "labelFont": "Century",
             "grid": false
           }
         },

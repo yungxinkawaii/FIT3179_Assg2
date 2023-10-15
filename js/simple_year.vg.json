@@ -6,9 +6,9 @@
   "width": 800,
   "background": null,
   "title": {
-    "text": "Timeline of Occurances",
+    "text": "Timeline of Occurrences",
     "fontSize": 20,
-    "font": "Century Gothic"
+    "font": "Century"
   },
   "layer": [
     {
@@ -31,8 +31,8 @@
           "timeUnit": "year",
           "axis": {
             "title": "Year",
-            "titleFont": "Century Gothic",
-            "labelFont": "Century Gothic"
+            "titleFont": "Century",
+            "labelFont": "Century"
           }
         },
         "y": {
@@ -40,25 +40,76 @@
           "title": "Number of Cases",
           "type": "quantitative",
           "axis": {
-            "titleFont": "Century Gothic",
-            "labelFont": "Century Gothic",
+            "titleFont": "Century",
+            "labelFont": "Century",
             "grid": false
           }
         }
       }
     },
     {
-      "mark": { "type": "text", "dx": 12, "dy": -10, "font": "Century Gothic"},
+      "mark": {
+        "type": "text",
+        "dx": 12,
+        "dy": -10,
+        "font": "Century"
+      },
       "encoding": {
         "x": {
           "field": "date",
           "type": "temporal",
           "timeUnit": "year",
-          "axis": { "title": "Year", "tickCount": 10 }
+          "axis": {
+            "title": "Year",
+            "tickCount": 10
+          }
         },
-        "y": { "aggregate": "count", "title": "Count", "type": "quantitative" },
-        "text": { "aggregate": "count", "type": "quantitative" },
-        "color": { "value": "black" }
+        "y": {
+          "aggregate": "count",
+          "title": "Count",
+          "type": "quantitative"
+        },
+        "text": {
+          "aggregate": "count",
+          "type": "quantitative"
+        },
+        "color": {
+          "value": "black"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dy": -80,
+        "dx": 180,
+        "fontSize": 13.5,
+        "fontStyle": "bold",
+        "font": "Century"
+      },
+      "encoding": {
+        "text": {
+          "condition": {
+            "test": "datum['armed'] == 'unarmed'",
+            "value": [
+              "The COVID-19 pandemic caused a",
+              "substantial decline in cases in 2021."
+            ]
+          },
+          "value": ""
+        },
+        "color": {
+          "value": "black"
+        },
+        "opacity": {
+          "condition": {
+            "test": "datum['armed'] == 'unarmed'",
+            "value": 1
+          },
+          "value": 0
+        }
       }
     }
   ]

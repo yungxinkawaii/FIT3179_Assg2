@@ -20,7 +20,7 @@
   "title": {
     "text": "Victims' Race Distribution",
     "fontSize": 20,
-    "font": "Century Gothic"
+    "font": "Century"
   },
   "encoding": {
     "theta": {
@@ -45,8 +45,8 @@
       "legend": {
         "title": "Race",
         "orient": "top-left",
-        "titleFont": "Century Gothic",
-        "labelFont": "Century Gothic",
+        "titleFont": "Century",
+        "labelFont": "Century",
         "titleFontSize": 15,
         "labelFontSize": 12,
         "symbolSize": 300

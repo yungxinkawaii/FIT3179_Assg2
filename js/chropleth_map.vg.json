@@ -4,9 +4,9 @@
   "height": 600,
   "background": "#efede9",
   "title": {
-    "text": "Occurence by State",
+    "text": "Occurrences by State",
     "fontSize": 20,
-    "font": "Century Gothic"
+    "font": "Century"
   },
   "projection": {
     "type": "albersUsa"
@@ -57,8 +57,8 @@
           },
           "legend": {
             "title": "Number of Cases",
-            "titleFont": "Century Gothic",
-            "labelFont": "Century Gothic",
+            "titleFont": "Century",
+            "labelFont": "Century",
             "titleFontSize": 15,
             "labelFontSize": 15
           }
@@ -96,7 +96,7 @@
         "dx": -320,
         "fontSize": 13.5,
         "fontStyle": "bold",
-        "font": "Century Gothic"
+        "font": "Century"
       },
       "encoding": {
         "text": {

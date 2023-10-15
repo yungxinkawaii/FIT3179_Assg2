@@ -9,7 +9,7 @@
   "title": {
     "text": "Used Weapons of Victims",
     "fontSize": 20,
-    "font": "Century Gothic"
+    "font": "Century"
   },
   "transform": [
     {
@@ -44,17 +44,17 @@
       "filter": "datum.rank <= 10"
     }
   ],
-  "params": [
-    {
-      "name": "highlight",
-      "select": {
-        "type": "point",
-        "on": "mouseover"
-      }
-    }
-  ],
   "layer": [
     {
+      "params": [
+        {
+          "name": "highlight",
+          "select": {
+            "type": "point",
+            "on": "mouseover"
+          }
+        }
+      ],
       "mark": {
         "type": "bar",
         "color": "saddlebrown"
@@ -65,8 +65,8 @@
           "type": "quantitative",
           "axis": {
             "title": "Number of Cases",
-            "titleFont": "Century Gothic",
-            "labelFont": "Century Gothic"
+            "titleFont": "Century",
+            "labelFont": "Century"
           }
         },
         "y": {
@@ -74,8 +74,8 @@
           "type": "nominal",
           "axis": {
             "title": "Weapon",
-            "titleFont": "Century Gothic",
-            "labelFont": "Century Gothic",
+            "titleFont": "Century",
+            "labelFont": "Century",
             "grid": false
           },
           "sort": "-x"
@@ -96,6 +96,35 @@
             "value": 1
           },
           "value": 0.2
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "baseline": "middle",
+        "dy": -80,
+        "dx": -280,
+        "fontSize": 13.5,
+        "fontStyle": "bold",
+        "font": "Century"
+      },
+      "encoding": {
+        "text": {
+          "condition": {
+            "test": "datum['armed'] == 'unarmed'",
+            "value": ["378 unarmed victims highlight the need to reduce lethal force."]
+          },
+          "value": ""
+        },
+        "color": { "value": "black" },
+        "opacity": {
+          "condition": {
+            "test": "datum['armed'] == 'unarmed'",
+            "value": 1
+          },
+          "value": 0
         }
       }
     }

@@ -5,9 +5,9 @@
   },
   "background": null,
   "title": {
-    "text": "Cities of Occurance",
+    "text": "Cities of Occurrence",
     "fontSize": 20,
-    "font": "Century Gothic"
+    "font": "Century"
   },
   "width": 800,
   "height": 300,
@@ -63,8 +63,8 @@
           "sort": "-x",
           "axis": {
             "title": "City",
-            "titleFont": "Century Gothic",
-            "labelFont": "Century Gothic"
+            "titleFont": "Century",
+            "labelFont": "Century"
           }
         },
         "x": {
@@ -72,8 +72,8 @@
           "type": "quantitative",
           "axis": {
             "title": "Number of Cases",
-            "titleFont": "Century Gothic",
-            "labelFont": "Century Gothic"
+            "titleFont": "Century",
+            "labelFont": "Century"
           }
         },
         "tooltip": [
@@ -111,7 +111,7 @@
         "dx": 10,
         "fontSize": 13.5,
         "fontStyle": "bold",
-        "font": "Century Gothic"
+        "font": "Century"
       },
       "encoding": {
         "text": {
@@ -134,8 +134,8 @@
   ],
   "config": {
     "axis": {
-      "labelFont": "Century Gothic",
-      "titleFont": "Century Gothic"
+      "labelFont": "Century",
+      "titleFont": "Century"
     }
   }
 }

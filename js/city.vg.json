@@ -136,6 +136,8 @@
     "axis": {
       "labelFont": "Century",
       "titleFont": "Century"
-    }
+    },
+    "view": {
+      "stroke": "transparent"}
   }
 }

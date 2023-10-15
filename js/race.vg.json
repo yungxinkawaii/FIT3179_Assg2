@@ -67,5 +67,10 @@
     {
       "mark": { "type": "arc", "innerRadius": 30, "outerRadius": 120, "stroke": "white" }
     }
-  ]
+  ],
+  "config": {
+    "view": {
+       "stroke": "transparent"
+    }
+  }
 }

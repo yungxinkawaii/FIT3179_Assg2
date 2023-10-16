@@ -5,7 +5,7 @@
   },
   "background": null,
   "width": 800,
-  "height": 300,
+  "height": 200,
   "title": {
     "text": "Used Weapons of Victims",
     "fontSize": 20,
@@ -41,7 +41,7 @@
       ]
     },
     {
-      "filter": "datum.rank <= 10"
+      "filter": "datum.rank <= 6"
     }
   ],
   "layer": [
@@ -104,7 +104,7 @@
         "type": "text",
         "align": "left",
         "baseline": "middle",
-        "dy": -80,
+        "dy": -15,
         "dx": -280,
         "fontSize": 13.5,
         "fontStyle": "bold",
